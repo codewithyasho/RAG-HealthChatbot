@@ -3,7 +3,7 @@ vectorstore.py, contains functions to create vectorstore, load vectorstore and a
 '''
 
 # VECTORSTORE RELATED IMPORTS
-from langchain_classic.vectorstores import FAISS
+from langchain_community.vectorstores import FAISS
 
 
 # 1. creating a new vectorstore from scratch

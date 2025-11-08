@@ -1,0 +1,10 @@
+langchain
+langchain-groq
+langchain-huggingface
+langchain-community
+faiss-cpu  # or faiss-gpu
+python-dotenv
+torch
+sentence-transformers
+streamlit
+
