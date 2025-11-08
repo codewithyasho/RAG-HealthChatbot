@@ -3,7 +3,6 @@ generating embeddings for the chunked documents for RAG system
 '''
 
 from langchain_huggingface import HuggingFaceEmbeddings
-from langchain_ollama import OllamaEmbeddings
 import torch
 
 
@@ -37,20 +36,3 @@ def huggingface_embeddings(model_name="sentence-transformers/all-MiniLM-L6-v2"):
 
     return embeddings
 
-
-# ==========================================================================
-
-# 2. Ollama Embeddings
-
-def ollama_embeddings(model_name):
-    '''Generate embeddings for the chunked documents using OllamaEmbeddings'''
-
-    print("\n[INFO] Ollama Embedding model Initializing...")
-
-    embeddings = OllamaEmbeddings(
-        model=model_name
-    )
-
-    print("=" * 50)
-
-    return embeddings
