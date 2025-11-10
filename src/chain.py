@@ -21,7 +21,7 @@ def create_rag_chain(vectorstore):
 
     # 1️⃣ Create retriever
     retriever = vectorstore.as_retriever(
-        search_type="similarity",
+        search_type="mmr",
         search_kwargs={"k": 5}
     )
 
