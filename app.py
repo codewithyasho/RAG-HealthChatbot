@@ -5,6 +5,7 @@ A user-friendly web interface for the RAG-based health information assistant.
 
 import streamlit as st
 from src.embedding import huggingface_embeddings
+from src.prompt import medical_information_prompt
 from src.vectorstore import load_vectorstore
 from src.chain import create_rag_chain
 from dotenv import load_dotenv
@@ -157,7 +158,7 @@ def initialize_chatbot():
                     return None, "CORRUPTED_INDEX"
                 raise load_error
 
-            chain = create_rag_chain(vectorstore=vectorstore)
+            chain = create_rag_chain(vectorstore=vectorstore, prompt=medical_information_prompt())
         return chain, None
     except Exception as e:
         return None, str(e)

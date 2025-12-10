@@ -3,12 +3,11 @@ Simple and modern RAG chain setup using LangChain Classic (Groq + FAISS).
 """
 
 from langchain_groq import ChatGroq
-from src.prompt import medical_information_prompt
 from langchain_classic.chains import create_retrieval_chain
 from langchain_classic.chains.combine_documents import create_stuff_documents_chain
 
 
-def create_rag_chain(vectorstore):
+def create_rag_chain(vectorstore, prompt):
     """
     Create and return a complete RAG chain.
     This function:
@@ -34,7 +33,7 @@ def create_rag_chain(vectorstore):
     # 3️⃣ Define prompt template
 
     # PROMPT FOR MEDICAL INFORMATION / HEALTH CHATBOT
-    prompt = medical_information_prompt()
+    prompt = prompt
 
     # 4️⃣ Build RAG chain
     document_chain = create_stuff_documents_chain(llm, prompt)

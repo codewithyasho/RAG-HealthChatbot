@@ -9,7 +9,7 @@ import torch
 # 3.GENERATING EMBEDDINGS FOR THE CHUNKED DOCUMENTS
 
 # 1. HuggingFace Embeddings
-def huggingface_embeddings(model_name="sentence-transformers/all-MiniLM-L6-v2"):
+def huggingface_embeddings(model_name="BAAI/bge-small-en-v1.5"):
     '''Generate embeddings for the chunked documents using HuggingFaceEmbeddings'''
 
     print("\n[INFO] HuggingFace Embedding model Initializing...")
